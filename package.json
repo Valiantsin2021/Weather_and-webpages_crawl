@@ -1,0 +1,35 @@
+{
+  "name": "weather-scrub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open",
+    "lint": "eslint ./cypress/e2e/*.js",
+    "format": "prettier --write ."
+  },
+  "pre-commit": [
+    "format",
+    "lint"
+  ],
+  "keywords": [],
+  "author": "Valentin",
+  "license": "ISC",
+  "devDependencies": {
+    "cy-spok": "^1.6.1",
+    "cypress": "^12.8.1",
+    "cypress-data-session": "^2.3.1",
+    "cypress-map": "^1.12.3",
+    "cypress-mochawesome-reporter": "^3.3.0",
+    "cypress-recurse": "^1.27.0",
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-chai-friendly": "^0.7.2",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "2.7.1"
+  },
+  "dependencies": {
+    "pre-commit": "^1.2.2"
+  }
+}
