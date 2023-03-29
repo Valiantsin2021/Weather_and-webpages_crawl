@@ -1,4 +1,5 @@
 const { defineConfig } = require('cypress')
+const allureWriter = require('@shelex/cypress-allure-plugin/writer')
 
 module.exports = defineConfig({
   e2e: {
@@ -6,17 +7,8 @@ module.exports = defineConfig({
     supportFile: false,
     fixturesFolder: false,
     setupNodeEvents(on, config) {
-      require('cypress-mochawesome-reporter/plugin')(on)
+      allureWriter(on, config)
       return config
-    },
-    reporter: 'cypress-mochawesome-reporter',
-    reporterOptions: {
-      reportDir: 'mochawesome-report',
-      charts: true,
-      reportPageTitle: 'IMDB Cypress test for Verisk',
-      embeddedScreenshots: true,
-      inlineAssets: true,
-      saveAllAttempts: false
     },
     chromeWebSecurity: false,
     viewportWidth: 1280,
